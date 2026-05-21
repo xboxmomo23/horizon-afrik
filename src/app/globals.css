@@ -1,26 +1,49 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-50: #f1f8f4;
+  --color-primary-100: #dcefe1;
+  --color-primary-200: #bbdfc6;
+  --color-primary-300: #8dc7a1;
+  --color-primary-400: #5da97c;
+  --color-primary-500: #3d8b60;
+  --color-primary-600: #2d6e4b;
+  --color-primary-700: #26583e;
+  --color-primary-800: #214733;
+  --color-primary-900: #1c3a2b;
+  --color-primary-950: #0f2118;
+
+  --color-accent-50: #fdf5ef;
+  --color-accent-100: #fae7d8;
+  --color-accent-200: #f4ccaf;
+  --color-accent-300: #eba87d;
+  --color-accent-400: #e2814f;
+  --color-accent-500: #d96531;
+  --color-accent-600: #c54f26;
+  --color-accent-700: #a33d23;
+  --color-accent-800: #823223;
+  --color-accent-900: #6a2c1f;
+
+  --color-sand-50: #fbf9f4;
+  --color-sand-100: #f5f0e3;
+  --color-sand-200: #ebe0c4;
+  --color-sand-300: #decba0;
+  --color-sand-400: #cfb077;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --shadow-soft: 0 4px 20px -8px rgba(28, 58, 43, 0.15);
+
+  --container-2xl: 80rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @variant lg {
+    padding-inline: 2rem;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

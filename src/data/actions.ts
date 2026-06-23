@@ -1,6 +1,8 @@
 import { HandHeart, GraduationCap, Cpu, type LucideIcon } from "lucide-react";
 
 export type ActionApproach = { title: string; description: string };
+export type WhyMatter = { title: string; description: string };
+export type ActionQuote = { text: string; author: string };
 
 export type Action = {
   slug: string;
@@ -12,13 +14,17 @@ export type Action = {
   intro: string;
   objectives: string[];
   approach: ActionApproach[];
+  whyMatters: WhyMatter[];
+  quote: ActionQuote;
+  projectCategory: string;
   image: string;
 };
 
 /**
  * ⚠️ CONTENU À FAIRE VALIDER PAR LE PRÉSIDENT
- * Les textes ci-dessous sont une proposition rédigée à partir de la mission
- * générale d'Horizon Afrik. À ajuster avec les éléments réels de l'association.
+ * Tous les textes sont rédigés à partir de la mission générale d'Horizon Afrik.
+ * Le champ `projectCategory` doit correspondre exactement au champ `category`
+ * d'un projet dans projets.ts pour que le lien automatique fonctionne.
  */
 export const ACTIONS: Action[] = [
   {
@@ -38,22 +44,20 @@ export const ACTIONS: Action[] = [
       "Valoriser le bénévolat et promouvoir les initiatives portées par nos membres.",
     ],
     approach: [
-      {
-        title: "Accompagnement de projets",
-        description:
-          "De l'émergence de l'idée à sa réalisation, nous apportons un appui méthodologique adapté aux réalités du terrain. Nos bénévoles partagent leur expertise pour structurer, planifier et conduire chaque initiative jusqu'à son aboutissement.",
-      },
-      {
-        title: "Mobilisation de ressources",
-        description:
-          "Nous identifions et activons les ressources nécessaires aux projets : bailleurs publics, fondations privées, dons individuels, mécénat d'entreprises et matériels donnés.",
-      },
-      {
-        title: "Mise en réseau",
-        description:
-          "Nous connectons les acteurs européens et africains autour d'objectifs partagés. Les rencontres, missions de terrain et événements que nous organisons créent des liens durables entre les associations.",
-      },
+      { title: "Accompagnement de projets", description: "De l'émergence de l'idée à sa réalisation, nous apportons un appui méthodologique adapté aux réalités du terrain. Nos bénévoles partagent leur expertise pour structurer, planifier et conduire chaque initiative jusqu'à son aboutissement." },
+      { title: "Mobilisation de ressources", description: "Nous identifions et activons les ressources nécessaires aux projets : bailleurs publics, fondations privées, dons individuels, mécénat d'entreprises et matériels donnés." },
+      { title: "Mise en réseau", description: "Nous connectons les acteurs européens et africains autour d'objectifs partagés. Les rencontres, missions de terrain et événements que nous organisons créent des liens durables entre les associations." },
     ],
+    whyMatters: [
+      { title: "Un impact réel", description: "Chaque euro mobilisé finance des actions concrètes, identifiées par les communautés locales elles-mêmes." },
+      { title: "Une approche respectueuse", description: "Nous n'imposons pas de solutions. Nous épaulons les acteurs africains qui connaissent leur terrain mieux que personne." },
+      { title: "Une présence durable", description: "Nos partenariats s'inscrivent dans le temps long, garantissant un suivi sérieux et une véritable continuité d'action." },
+    ],
+    quote: {
+      text: "La vraie solidarité, ce n'est pas donner ce qui nous reste, c'est partager ce que l'on est.",
+      author: "Esprit d'Horizon Afrik",
+    },
+    projectCategory: "Solidarité internationale",
     image: "/images/galerie/03-dons-alimentaires.webp",
   },
   {
@@ -73,22 +77,20 @@ export const ACTIONS: Action[] = [
       "Sensibiliser aux enjeux du développement durable et de la citoyenneté active.",
     ],
     approach: [
-      {
-        title: "Soutien aux écoles",
-        description:
-          "Nous appuyons les écoles partenaires en Afrique de l'Ouest : fournitures scolaires, équipements, formations d'enseignants et bourses pour les élèves en difficulté.",
-      },
-      {
-        title: "Formation professionnelle",
-        description:
-          "Nous accompagnons des programmes de formation aux métiers porteurs localement : artisanat, agriculture, services. L'objectif est l'insertion durable dans l'économie locale.",
-      },
-      {
-        title: "Mentorat & accompagnement",
-        description:
-          "Nos bénévoles français et africains accompagnent individuellement des jeunes dans la construction de leurs projets : choix d'études, montage de micro-entreprises, recherche de stages.",
-      },
+      { title: "Soutien aux écoles", description: "Nous appuyons les écoles partenaires en Afrique de l'Ouest : fournitures scolaires, équipements, formations d'enseignants et bourses pour les élèves en difficulté." },
+      { title: "Formation professionnelle", description: "Nous accompagnons des programmes de formation aux métiers porteurs localement : artisanat, agriculture, services. L'objectif est l'insertion durable dans l'économie locale." },
+      { title: "Mentorat & accompagnement", description: "Nos bénévoles français et africains accompagnent individuellement des jeunes dans la construction de leurs projets : choix d'études, montage de micro-entreprises, recherche de stages." },
     ],
+    whyMatters: [
+      { title: "L'investissement le plus rentable", description: "Un enfant scolarisé aujourd'hui, c'est un adulte autonome demain, capable à son tour de faire grandir sa communauté." },
+      { title: "Des compétences qui restent", description: "Contrairement à l'aide ponctuelle, la formation laisse une trace durable. Le savoir transmis ne s'épuise pas." },
+      { title: "Une jeunesse qui reste chez elle", description: "Former localement, c'est offrir des perspectives qui réduisent la nécessité de partir chercher ailleurs un avenir possible." },
+    ],
+    quote: {
+      text: "Éduquer un enfant, c'est éclairer une génération.",
+      author: "Esprit d'Horizon Afrik",
+    },
+    projectCategory: "Éducation & Formation",
     image: "/images/galerie/04-enfant.webp",
   },
   {
@@ -108,22 +110,20 @@ export const ACTIONS: Action[] = [
       "Sensibiliser à la cybersécurité et aux usages responsables du numérique.",
     ],
     approach: [
-      {
-        title: "Partage de savoir-faire",
-        description:
-          "Des professionnels français du numérique partagent leurs compétences avec des structures africaines : missions courtes, ateliers, mentorat à distance, formation de formateurs.",
-      },
-      {
-        title: "Équipement & infrastructure",
-        description:
-          "Nous facilitons l'accès aux outils numériques : matériel reconditionné, logiciels libres, connectivité, et accompagnement pour leur prise en main par les utilisateurs locaux.",
-      },
-      {
-        title: "Appui à l'innovation",
-        description:
-          "Nous soutenons les jeunes porteurs de projets tech africains : conseils, mise en réseau avec l'écosystème français, recherche de financements et de partenariats.",
-      },
+      { title: "Partage de savoir-faire", description: "Des professionnels français du numérique partagent leurs compétences avec des structures africaines : missions courtes, ateliers, mentorat à distance, formation de formateurs." },
+      { title: "Équipement & infrastructure", description: "Nous facilitons l'accès aux outils numériques : matériel reconditionné, logiciels libres, connectivité, et accompagnement pour leur prise en main par les utilisateurs locaux." },
+      { title: "Appui à l'innovation", description: "Nous soutenons les jeunes porteurs de projets tech africains : conseils, mise en réseau avec l'écosystème français, recherche de financements et de partenariats." },
     ],
+    whyMatters: [
+      { title: "Une révolution en marche", description: "L'Afrique connaît la plus forte croissance numérique du monde. Y participer maintenant, c'est accompagner un mouvement irréversible." },
+      { title: "Le partage plutôt que l'assistance", description: "Le transfert de compétences crée de l'autonomie, là où le simple don de matériel ne fait qu'entretenir la dépendance." },
+      { title: "Des écosystèmes locaux qui émergent", description: "Soutenir un développeur, c'est potentiellement faire naître une start-up, qui créera des emplois pour les générations suivantes." },
+    ],
+    quote: {
+      text: "Le numérique ne se résume pas aux outils. C'est avant tout des compétences, et celles-ci se partagent.",
+      author: "Esprit d'Horizon Afrik",
+    },
+    projectCategory: "Transfert de technologie",
     image: "/images/galerie/08-soutien.webp",
   },
 ];

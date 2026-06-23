@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Check, ArrowRight, Heart } from "lucide-react";
 import type { Action } from "@/data/actions";
-import { DONATION_URL } from "@/lib/constants";
+import { DONATION_PAGE } from "@/lib/constants";
 
 export function ActionDetail({ action }: { action: Action }) {
   const Icon = action.icon;
@@ -80,7 +80,7 @@ export function ActionDetail({ action }: { action: Action }) {
             Soutenez nos actions de {action.title.toLowerCase()}.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link href={DONATION_URL} target="_blank" rel="noopener noreferrer"
+            <Link href={DONATION_PAGE}
               className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition active:scale-95">
               <Heart className="h-4 w-4" fill="currentColor" /> Faire un don
             </Link>

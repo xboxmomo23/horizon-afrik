@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { PresidentMessage } from "@/components/sections/PresidentMessage";
 import { Handshake, Globe2, Sprout, Users, ArrowRight, Heart } from "lucide-react";
-import { SITE, DONATION_URL } from "@/lib/constants";
+import { SITE, DONATION_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous",
@@ -94,7 +94,7 @@ export default function QuiSommesNousPage() {
             Envie de nous rejoindre ou de soutenir nos projets ?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link href={DONATION_URL} target="_blank" rel="noopener noreferrer"
+            <Link href={DONATION_PAGE}
               className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition active:scale-95">
               <Heart className="h-4 w-4" fill="currentColor" /> Faire un don
             </Link>

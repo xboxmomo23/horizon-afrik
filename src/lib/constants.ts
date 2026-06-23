@@ -28,5 +28,7 @@ export const SOCIAL = {
   youtube: "https://youtube.com/@horizonafrik",
 } as const;
 
-// À remplacer par le vrai lien quand le patron aura tranché (HelloAsso, Stripe, etc.)
-export const DONATION_URL = "#";
+export const DONATION_PAGE = "/faire-un-don";
+
+// Lien externe de paiement (HelloAsso, Stripe, etc.) — à remplacer quand le patron aura tranché
+export const DONATION_URL = "https://www.helloasso.com/associations/horizon-afrik/formulaires/REMPLACE_PAR_VRAIE_URL";

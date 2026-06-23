@@ -29,6 +29,13 @@ export default function ProjetsPage() {
 
       <section className="py-20 md:py-28 bg-sand-50">
         <div className="container">
+          {/* ⚠️ À RETIRER quand les vrais projets seront ajoutés */}
+          {PROJETS.length > 0 && (
+            <div className="mb-10 rounded-xl border border-accent-300 bg-accent-50 px-5 py-4 text-sm text-accent-900">
+              <strong>Note :</strong> les projets ci-dessous sont des exemples illustratifs.
+              La sélection définitive des projets de l'association sera publiée prochainement.
+            </div>
+          )}
           {PROJETS.length === 0 ? (
             // État vide — aucun projet pour le moment
             <div className="max-w-xl mx-auto text-center py-12">

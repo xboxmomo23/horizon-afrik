@@ -2,44 +2,63 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary-50: #f1f8f4;
-  --color-primary-100: #dcefe1;
-  --color-primary-200: #bbdfc6;
-  --color-primary-300: #8dc7a1;
-  --color-primary-400: #5da97c;
-  --color-primary-500: #3d8b60;
-  --color-primary-600: #2d6e4b;
-  --color-primary-700: #26583e;
-  --color-primary-800: #214733;
-  --color-primary-900: #1c3a2b;
-  --color-primary-950: #0f2118;
+  /* === Palette PRIMARY — Bleu du logo (couleur dominante) === */
+  --color-primary-50:  #eff6fa;
+  --color-primary-100: #d8eaf2;
+  --color-primary-200: #a9d8ee;
+  --color-primary-300: #61c1ee;
+  --color-primary-400: #0faef9;
+  --color-primary-500: #0496db;
+  --color-primary-600: #047cb6;
+  --color-primary-700: #036593;
+  --color-primary-800: #02537a;
+  --color-primary-900: #023f5c;
+  --color-primary-950: #012334;
 
-  --color-accent-50: #fdf5ef;
-  --color-accent-100: #fae7d8;
-  --color-accent-200: #f4ccaf;
-  --color-accent-300: #eba87d;
-  --color-accent-400: #e2814f;
-  --color-accent-500: #d96531;
-  --color-accent-600: #c54f26;
-  --color-accent-700: #a33d23;
-  --color-accent-800: #823223;
-  --color-accent-900: #6a2c1f;
+  /* === Palette ACCENT — Orange solaire du logo (CTA) === */
+  --color-accent-50:  #fdf8eb;
+  --color-accent-100: #f9ecc4;
+  --color-accent-200: #f5db89;
+  --color-accent-300: #f0c14d;
+  --color-accent-400: #f6b103;
+  --color-accent-500: #e09f02;
+  --color-accent-600: #c08902;
+  --color-accent-700: #997002;
+  --color-accent-800: #7a5901;
+  --color-accent-900: #5e4501;
+  --color-accent-950: #3a2b00;
 
-  --color-sand-50: #fbf9f4;
+  /* === Palette SECONDARY — Vert nature du logo === */
+  --color-secondary-50:  #f3f7f1;
+  --color-secondary-100: #e1ecde;
+  --color-secondary-200: #c2deb9;
+  --color-secondary-300: #95ce82;
+  --color-secondary-400: #64c345;
+  --color-secondary-500: #53a936;
+  --color-secondary-600: #4b9b31;
+  --color-secondary-700: #3e8029;
+  --color-secondary-800: #356c23;
+  --color-secondary-900: #29551b;
+  --color-secondary-950: #1a3611;
+
+  /* === SAND — fond chaleureux inchangé === */
+  --color-sand-50:  #fbf9f4;
   --color-sand-100: #f5f0e3;
   --color-sand-200: #ebe0c4;
   --color-sand-300: #decba0;
   --color-sand-400: #cfb077;
 
+  /* === Typographies === */
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, serif;
 
-  --shadow-soft: 0 4px 20px -8px rgba(28, 58, 43, 0.15);
-
-  --container-2xl: 80rem;
+  /* === Ombre douce === */
+  --shadow-soft: 0 4px 20px -8px rgba(1, 35, 52, 0.18);
 }
 
 @utility container {
+  width: 100%;
+  max-width: 1280px;
   margin-inline: auto;
   padding-inline: 1rem;
 
@@ -47,3 +66,6 @@
     padding-inline: 2rem;
   }
 }
+
+html { scroll-behavior: smooth; }
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }

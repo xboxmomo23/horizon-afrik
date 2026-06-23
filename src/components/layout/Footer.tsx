@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube, Heart, ArrowRight } from "lucide-react";
-import { CONTACT, SITE, SOCIAL, DONATION_URL } from "@/lib/constants";
+import { CONTACT, SITE, SOCIAL, DONATION_PAGE } from "@/lib/constants";
 
 const quickLinks = [
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
@@ -36,9 +36,7 @@ export function Footer() {
             </p>
           </div>
           <Link
-            href={DONATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DONATION_PAGE}
             className="shrink-0 inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold shadow-soft transition active:scale-95"
           >
             <Heart className="h-4 w-4" fill="currentColor" />
@@ -49,20 +47,19 @@ export function Footer() {
 
       <div className="container py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Link href="/" className="flex items-center gap-3 mb-4">
-            <Image
-              src="/images/logo/logo-ha-blanc.svg"
-              alt={`Logo ${SITE.name}`}
-              width={48}
-              height={48}
-              className="h-12 w-12"
-            />
-            <div className="flex flex-col leading-tight">
-              <span className="font-display text-xl font-semibold text-white">Horizon Afrik</span>
-              <span className="text-[10px] uppercase tracking-widest text-accent-400">
-                Depuis {SITE.founded}
-              </span>
+          <Link href="/" className="inline-flex items-center mb-5 group" aria-label={`${SITE.name} - Accueil`}>
+            <div className="bg-white rounded-xl px-3 py-2 shadow-soft group-hover:shadow-lg transition">
+              <Image
+                src="/images/logo/logo-ha-officiel.jpg"
+                alt={`Logo ${SITE.name}`}
+                width={140}
+                height={105}
+                className="h-14 w-auto"
+              />
             </div>
+            <span className="ml-4 font-display text-[10px] uppercase tracking-[0.2em] text-accent-300 border-l border-primary-700 pl-4 leading-snug">
+              Depuis<br />{SITE.founded}
+            </span>
           </Link>
           <p className="text-primary-200 text-sm leading-relaxed">
             Association loi 1901 à but non lucratif. Nous œuvrons pour promouvoir la solidarité,

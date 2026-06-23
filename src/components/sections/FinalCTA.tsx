@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Heart, ArrowRight } from "lucide-react";
-import { DONATION_URL } from "@/lib/constants";
+import { DONATION_PAGE } from "@/lib/constants";
 
 export function FinalCTA() {
   return (
@@ -31,9 +31,7 @@ export function FinalCTA() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Link
-              href={DONATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DONATION_PAGE}
               className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-7 py-3.5 rounded-full font-semibold shadow-soft transition active:scale-95"
             >
               <Heart className="h-5 w-5" fill="currentColor" />

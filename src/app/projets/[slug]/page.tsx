@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/layout/PageHero";
 import { PROJETS, STATUS_LABELS, getProjetBySlug } from "@/data/projets";
 import { MapPin, Calendar, Tag, Heart, ArrowLeft } from "lucide-react";
-import { DONATION_URL } from "@/lib/constants";
+import { DONATION_PAGE } from "@/lib/constants";
 
 export function generateStaticParams() {
   return PROJETS.map((p) => ({ slug: p.slug }));
@@ -62,7 +62,7 @@ export default async function ProjetPage({ params }: { params: Promise<{ slug: s
             <Link href="/projets" className="inline-flex items-center gap-2 text-primary-700 hover:text-accent-600 font-medium transition">
               <ArrowLeft className="h-4 w-4" /> Tous les projets
             </Link>
-            <Link href={DONATION_URL} target="_blank" rel="noopener noreferrer"
+            <Link href={DONATION_PAGE}
               className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition active:scale-95">
               <Heart className="h-4 w-4" fill="currentColor" /> Soutenir ce projet
             </Link>

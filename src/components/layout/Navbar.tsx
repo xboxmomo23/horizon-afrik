@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Heart } from "lucide-react";
 import { MAIN_NAV } from "@/lib/navigation";
-import { DONATION_URL, SITE } from "@/lib/constants";
+import { DONATION_PAGE, SITE } from "@/lib/constants";
 import { TopBar } from "./TopBar";
 import { cn } from "@/lib/utils";
 
@@ -38,21 +38,16 @@ export function Navbar() {
         <div className="container flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 group" aria-label={`${SITE.name} - Accueil`}>
             <Image
-              src="/images/logo/logo-ha.svg"
+              src="/images/logo/logo-ha-officiel.jpg"
               alt={`Logo ${SITE.name}`}
-              width={48}
-              height={48}
+              width={140}
+              height={105}
               priority
-              className="h-12 w-12"
+              className="h-14 w-auto"
             />
-            <div className="flex flex-col leading-tight">
-              <span className="font-display text-xl font-semibold text-primary-900 group-hover:text-primary-700 transition">
-                Horizon Afrik
-              </span>
-              <span className="text-[10px] uppercase tracking-widest text-primary-600/80">
-                Solidarité Europe-Afrique
-              </span>
-            </div>
+            <span className="hidden md:block font-display text-[11px] uppercase tracking-[0.18em] text-primary-700/80 border-l border-primary-200 pl-3 max-w-[140px] leading-snug">
+              Solidarité<br />Europe-Afrique
+            </span>
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">
@@ -94,9 +89,7 @@ export function Navbar() {
           </ul>
 
           <Link
-            href={DONATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DONATION_PAGE}
             className="hidden lg:inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-soft transition active:scale-95"
           >
             <Heart className="h-4 w-4" fill="currentColor" />
@@ -167,9 +160,7 @@ export function Navbar() {
             ))}
             <li className="pt-3">
               <Link
-                href={DONATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={DONATION_PAGE}
                 className="flex items-center justify-center gap-2 w-full bg-accent-500 hover:bg-accent-600 text-white px-5 py-3 rounded-full font-semibold transition"
               >
                 <Heart className="h-4 w-4" fill="currentColor" />
